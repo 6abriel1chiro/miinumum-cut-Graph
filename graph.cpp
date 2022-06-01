@@ -1,4 +1,4 @@
-#include "graph.h"
+/*#include "graph.h"
 graph::graph()
 {
 	cortes = 0;
@@ -35,11 +35,11 @@ void graph::leerArchivo(string nom)
 }
 void graph::mostrar()
 {
-	cout << "tam: " << G.size() << endl;
+	cout << "size: " << G.size() << endl;
 	map<string, Nodo<string> >::iterator it;
 	for (it = G.begin(); it != G.end(); ++it)
 	{
-		cout << it->first << " ---> " << " " << it->second.getCont();
+		cout << it->first << " -> " << " " << it->second.getCont();
 		it->second.getLista()->mostrarLista();
 	}
 }
@@ -128,3 +128,5 @@ void graph::reiniciargraph(string nom)
 	}
 	leerArchivo(nom);
 }
+
+*/

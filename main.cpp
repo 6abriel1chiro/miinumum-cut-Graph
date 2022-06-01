@@ -10,11 +10,11 @@ int main()
 	do
 	{
 		system("cls");
-		cout << "Menu de Opciones" << endl;
+		cout << "Menu" << endl;
 		cout << "1 Insertar Archivo" << endl;
 		cout << "2 Mostrar" << endl;
 		cout << "3 Mincut" << endl;
-		cout << "4 Reiniciar graph" << endl;
+		cout << "4 reset graph" << endl;
 		cout << "5 Salir" << endl;
 		cout << " Ingrese la opcion: ";
 		cin >> opcion;
@@ -33,12 +33,12 @@ int main()
 				res = graph.minCut(graph.getgraph());
 				if (res < min)
 					min = res;
-				cout << "Cortes: " << min << endl;
+				cout << "cuts: " << min << endl;
 			}
 			catch (exception& e)
 			{
 				error = e.what();
-				cout << "Vuelva a ejecutar el mincut" << endl;
+				cout << "please run the program again" << endl;
 			}
 			break;
 		case 4:

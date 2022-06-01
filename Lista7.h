@@ -14,7 +14,6 @@ public:
 	Par<T>* getUltimo();
 	void setPrimer(Par<T>* primer);
 	void setUltimo(Par<T>* ultimo);
-	void cargarArchivo(string arch);
 	void insertarPrincipio(T elemento);
 	bool eliminarPrincipio();
 	void insertarFinal(T elemento);
@@ -62,18 +61,7 @@ void Lista7<T>::setUltimo(Par<T>* ultimo)
 	this->ultimo = ultimo;
 }
 
-template <class T>
-void Lista7<T>::cargarArchivo(string arch)
-{
-	ifstream archivo(arch);
-	T elem;
-	while (!archivo.eof())
-	{
-		archivo >> elem;
-		insertarFinal(elem);
-	}
-	archivo.close();
-}
+
 
 template <class T>
 void Lista7<T>::insertarPrincipio(T elemento)
