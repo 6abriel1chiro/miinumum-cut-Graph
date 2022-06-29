@@ -14,11 +14,17 @@ public:
 	void mostrar();
 	void reiniciargraph(string nom);
 	void obtenerVertAleatorio(string& v1, string& v2);
+
+	int obtenerVertAleatorio2();
+
 	void contraer(string v1, string v2, map<string, Nodo<string> >& graphs);
 	void eliminarAutociclos(map<string, Nodo<string> >& graphs);
 	int minCut(map<string, Nodo<string> >& G);
+	int minCut2(map<string, Nodo<string> >& G);
+
 };
 
+#include "graph.h"
 graph::graph()
 {
 	cortes = 0;
@@ -80,6 +86,12 @@ void graph::obtenerVertAleatorio(string& v1, string& v2)
 			cont++;
 	}
 }
+
+int graph::obtenerVertAleatorio2()
+{
+        int random = 1+ (rand() % 10);
+        return random;
+}
 void graph::contraer(string v1, string v2, map<string, Nodo<string> >& graphs)
 {
 	G[v2].getLista()->eliminarElementoDado(v1);
@@ -113,6 +125,15 @@ int graph::minCut(map<string, Nodo<string> >& G)
 		eliminarAutociclos(G);
 		a++;
 	}
+	return a;
+}
+
+int graph::minCut2(map<string, Nodo<string> >& G)
+{
+	int a = 0;
+
+	a= obtenerVertAleatorio2();
+
 	return a;
 }
 void graph::eliminarAutociclos(map<string, Nodo<string> >& G)

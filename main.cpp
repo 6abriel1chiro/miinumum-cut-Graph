@@ -7,6 +7,7 @@ int main()
 	int res;
 	int total = 0;
 	int opcion;
+	string nom = "MIN_CUT_CON_NOMBRES.txt";
 	do
 	{
 		system("cls");
@@ -22,7 +23,7 @@ int main()
 		switch (opcion)
 		{
 		case 1:
-			graph.leerArchivo("test.txt");
+			graph.leerArchivo(nom);
 			break;
 		case 2:
 			graph.mostrar();
@@ -30,10 +31,23 @@ int main()
 		case 3:
 			try 
 			{
+				if (nom=="test.txt")
+				{
 				res = graph.minCut(graph.getgraph());
 				if (res < min)
 					min = res;
 				cout << "cuts: " << min << endl;
+				}
+				else{
+
+				res = graph.minCut2(graph.getgraph());
+				if (res < min)
+				min = res;
+				cout << "cuts: " << min << endl;
+
+				}
+				
+
 			}
 			catch (exception& e)
 			{
@@ -42,7 +56,7 @@ int main()
 			}
 			break;
 		case 4:
-			graph.reiniciargraph("test.txt");
+			graph.reiniciargraph(nom);
 			break;
 		}
 		system("pause");
